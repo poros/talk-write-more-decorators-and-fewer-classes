@@ -1,4 +1,4 @@
-from log import Log
+from statmonster import Log
 from decoders import decode_apache
 from functool import partial
 
