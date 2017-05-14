@@ -1,6 +1,6 @@
 from statmonster import Log
-from codecs import decode_apache
-from functool import partial
+from utils import decode_apache
+from functools import partial
 
 
 events = Log("events")
