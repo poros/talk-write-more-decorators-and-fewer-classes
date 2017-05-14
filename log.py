@@ -10,7 +10,7 @@ class Log:
     def __init__(self, name, codec=decode_json):
         self.name = name
         self.codec = codec
-        self.fns = []
+        self.fns = set()
 
     def decode(self, line):
         return self.codec(line)
@@ -24,5 +24,5 @@ class Log:
                 send_email(fn.owners, e)
 
     def register(self, fn):
-        self.fns.append(fn)
+        self.fns.add(fn)
         return fn
