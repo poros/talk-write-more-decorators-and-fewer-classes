@@ -19,7 +19,7 @@ class Log:
         entry = self.decode(line)
         for fn in self.fns:
             try:
-                yield from fn(entry, self.name)
+                yield from fn(entry)
             except Exception as e:
                 send_email(fn.owners, e)
 

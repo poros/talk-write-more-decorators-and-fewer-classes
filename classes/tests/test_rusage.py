@@ -10,4 +10,4 @@ def trigger():
 
 def test_time_cpu(trigger):
     entry = {"start_time": 1000, "stime": 42, "utime": 33}
-    assert Timer("cpu.stime", 1000, 42, {}) in list(trigger.digest(entry, "foo"))
+    assert Timer("cpu.stime", 1000, 42, {}) in list(trigger.digest(entry))

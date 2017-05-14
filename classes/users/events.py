@@ -8,5 +8,5 @@ class EventsLog(Log):
 class CountEventsTrigger(Trigger):
     owners = ["antonio@yelp.com"]
 
-    def digest(entry, log):
+    def digest(self, entry):
         yield Counter("events", entry["time"], 1, {"type": entry["type"]})
