@@ -1,2 +1,2 @@
-def send_email(*addresses):
+def send_email(addresses, error):
     pass
