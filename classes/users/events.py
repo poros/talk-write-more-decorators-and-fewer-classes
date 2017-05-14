@@ -1,8 +1,12 @@
-from .logs import events
-from statmonster import owners, register, Counter
+from statmonster import Log, Trigger, Counter
 
 
-@register(events)
-@owners("antonio@yelp.com")
-def count_events(entry, log):
-    yield Counter("events", entry["time"], 1, {"type": entry["type"]})
+class EventsLog(Log):
+    name = "events"
+
+
+class CountEventsTrigger(Trigger):
+    owners = ["antonio@yelp.com"]
+
+    def digest(entry, log):
+        yield Counter("events", entry["time"], 1, {"type": entry["type"]})

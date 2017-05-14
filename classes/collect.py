@@ -10,10 +10,8 @@ def collect():
         module_name = '.'.join(file_path[:-3].split('/'))
         import_module(module_name)
 
-    module = import_module("users.logs")
-    for name, obj in inspect.getmembers(module):
-        if isinstance(obj, Log):
-            yield name, obj
+    # too long...
+
 
 
 if __name__ == "__main__":
