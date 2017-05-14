@@ -1,12 +1,13 @@
-from .service import emit_service_counters
-from statmonter import Counter
+from users.service import emit_service_counters
+from statmonster import Counter
 
 
 def test_emit_service_counters():
     entry = {
-        'time': 123456,
-        'status': 200,
-        'blob': 'bla',
+        "time": 123456,
+        "status": 200,
+        "method_name": "GET",
+        "blob": "foo",
     }
-    expected = Counter("test_count", 123456, 1, {'status': 200})
-    assert expected in list(emit_service_counters("test_count", entry))
+    expected = Counter("test.request_count", 123456, 1, {"method": "GET"})
+    assert expected in list(emit_service_counters("test", entry))

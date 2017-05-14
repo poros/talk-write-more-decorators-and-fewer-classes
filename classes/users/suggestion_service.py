@@ -8,9 +8,9 @@ class SuggestionsLog(Log):
 
 class SuggestionsStatsTimings(ServiceTimingBaseTrigger):
     owners = ["search@yelp.com"]
-    metric_name = 'SearchSuggestTimings'
+    metric_name = 'suggestions_timings'
 
 
 class SuggestionsStatsCount(ServiceCountBaseTrigger):
     owners = ["search@yelp.com"]
-    metric_name = 'SearchSuggestCount'
+    metric_name = 'suggestions_count'

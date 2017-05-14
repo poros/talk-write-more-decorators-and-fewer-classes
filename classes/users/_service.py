@@ -8,13 +8,13 @@ class ServiceBaseTrigger(Trigger):
         assert self.metric_name, "metric_name must be specified"
 
     def make_key(self, stat_name):
-        return "f{self.metric_name}.{stat_name}"
+        return f"{self.metric_name}.{stat_name}"
 
 
 class ServiceTimingBaseTrigger(ServiceBaseTrigger):
 
     def digest(self, entry):
-        key = self.make_key("requestLatency")
+        key = self.make_key("request_latency")
         dimensions = {'method': entry['method_name']}
 
         yield Timer(key, entry['time'], entry['time_elapsed'], dimensions)

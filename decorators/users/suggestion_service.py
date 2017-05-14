@@ -1,6 +1,6 @@
 from statmonster import owners
-from logs import suggestions_service
-from .service import emit_service_timings, emit_service_counters
+from users.logs import suggestions_service
+from users.service import emit_service_timings, emit_service_counters
 
 
 @suggestions_service.register
