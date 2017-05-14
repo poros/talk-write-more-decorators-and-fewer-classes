@@ -1,4 +1,5 @@
 from log import Log  # noqa
+from trigger import Trigger  # noqa
 from collections import namedtuple
 from functools import partial
 from emails import send_email
