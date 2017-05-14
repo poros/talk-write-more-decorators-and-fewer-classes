@@ -13,3 +13,6 @@ if __name__ == "__main__":
     for name, obj in inspect.getmembers(module):
         if isinstance(obj, Log):
             print(name)
+            for f in obj.fns:
+                print("\t" + f.__name__)
+                print("\t\t" + " ".join(f.owners))
