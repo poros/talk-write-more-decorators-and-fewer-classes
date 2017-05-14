@@ -6,6 +6,7 @@ from functools import partial
 events = Log("events")
 rusage = Log("rusage")
 suggestions_service = Log("suggest")
+home = Log("homepage")
 
 
 ApacheLog = partial(Log, codec=decode_apache)

@@ -3,9 +3,8 @@ from statmonster import Trigger, Timer, Counter
 
 class ServiceBaseTrigger(Trigger):
     def __init__(self):
-        super(ServiceBaseTrigger, self).__init__()
-
-        assert self.metric_name, "metric_name must be specified"
+        super().__init__()
+        assert self.metric_name
 
     def make_key(self, stat_name):
         return f"{self.metric_name}.{stat_name}"
