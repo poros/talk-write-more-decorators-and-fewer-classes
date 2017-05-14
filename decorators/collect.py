@@ -12,7 +12,4 @@ if __name__ == "__main__":
     module = import_module("users.logs")
     for name, obj in inspect.getmembers(module):
         if isinstance(obj, Log):
-            print(name)
-            for f in obj.fns:
-                print("\t" + f.__name__)
-                print("\t\t" + " ".join(f.owners))
+            print(f"{name}:{obj}")
