@@ -23,15 +23,15 @@ def get_log_and_triggers(module_name, module):
     for name, cls in inspect.getmembers(module, inspect.isclass):
         if is_valid_log(module_name, cls):
             assert not log, "Multiple logs in the same module: %s" % module
-            log = cls
+            log = cls()
         elif is_valid_trigger(module_name, cls):
-            triggers.append(cls)
+            triggers.append(cls())
     return log, set(triggers)
 
 
 def is_valid_log(module_name, log):
     return (issubclass(log, Log) and
-            log.__module__ == "%s.%s" % (DEFAULT_DIR, module_name))
+            log.__module__ == f"{DEFAULT_DIR}.{module_name}")
 
 
 def is_valid_trigger(module_name, trigger):

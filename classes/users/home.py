@@ -9,7 +9,7 @@ class HomePageLog(Log):
 class HomePageEndpointsTrigger(EndpointsTimingBaseTrigger):
     owners = ["consumer@yelp.com"]
     endpoints = ["best_of_yelp", "suggestions", "nearby"]
-    metrics_name = "home"
+    metric_name = "home"
 
     def get_additional_dimensions(self, entry):
         return {
