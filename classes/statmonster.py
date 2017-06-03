@@ -16,6 +16,6 @@ def process(log, triggers, line):
     entry = log.decode(line)
     for trigger in triggers:
         try:
-            yield from trigger.digest(entry, log.name)
+            yield from trigger.digest(entry)
         except Exception as e:
             send_email(trigger.owners, e)

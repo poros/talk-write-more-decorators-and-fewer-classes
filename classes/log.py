@@ -11,8 +11,9 @@ class Log:
     def __init__(self):
         assert self.name, "log name must be specified"
 
-    def decode(self, line):
-        return self.codec(line)
+    @classmethod
+    def decode(cls, line):
+        return cls.codec(line)
 
     def __str__(self):
         return self.name
