@@ -1,11 +1,12 @@
+from enum import Enum
 from log import Log  # noqa
 from collections import namedtuple
 from functools import partial
 
-
+MetricType = Enum("MetricsType", ("Counter", "Timer"))
 Metric = namedtuple("Metric", ("name", "ts", "value", "dims", "type"))
-Counter = partial(Metric, type="C")
-Timer = partial(Metric, type="T")
+Counter = partial(Metric, type=MetricType.Counter)
+Timer = partial(Metric, type=MetricType.Timer)
 
 
 def owners(*handlers):

@@ -5,8 +5,8 @@ def make_key(metric_name, stat_name):
     return f"{metric_name}.{stat_name}"
 
 
-def emit_service_timings(metric_name, entry):
-    key = make_key("requestLatency")
+def emit_service_timings(prefix, entry):
+    key = make_key(prefix, "requestLatency")
     dimensions = {"method": entry["method_name"]}
 
     yield Timer(key, entry["time"], entry["time_elapsed"], dimensions)
