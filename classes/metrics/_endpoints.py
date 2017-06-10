@@ -17,6 +17,6 @@ class EndpointsTimingBaseTrigger(Trigger):
         add_dims = self.get_additional_dimensions(entry)
         for endpoint in self.endpoints:
             if endpoint == entry["endpoint"]:
-                timing = entry["ednpoint"]["time"]
+                timing = entry["endpoint"]["time"]
                 dims = {'endpoint': endpoint}.update(add_dims)
                 yield Counter(self.metric_name, ts, timing, dims)
