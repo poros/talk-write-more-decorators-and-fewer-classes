@@ -1,4 +1,4 @@
-from users.service import emit_service_counters
+from metrics.service import emit_service_counters
 from statmonster import Counter
 
 

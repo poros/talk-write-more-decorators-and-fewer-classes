@@ -6,11 +6,11 @@ from statmonster import Log
 
 
 def collect():
-    for file_path in glob.iglob(os.path.join("users", "*.py")):
+    for file_path in glob.iglob(os.path.join("metrics", "*.py")):
         module_name = '.'.join(file_path[:-3].split('/'))
         import_module(module_name)
 
-    module = import_module("users.logs")
+    module = import_module("metrics.logs")
     for name, obj in inspect.getmembers(module):
         if isinstance(obj, Log):
             yield name, obj

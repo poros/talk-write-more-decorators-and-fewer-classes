@@ -1,4 +1,4 @@
-from users.rusage import time_cpu
+from metrics.rusage import time_cpu
 from statmonster import Timer
 
 

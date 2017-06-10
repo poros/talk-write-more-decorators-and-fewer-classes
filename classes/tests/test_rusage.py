@@ -1,4 +1,4 @@
-from users.rusage import TimeCpuTrigger
+from metrics.rusage import TimeCpuTrigger
 from statmonster import Timer
 import pytest
 

@@ -5,7 +5,7 @@ import inspect
 from statmonster import Log, Trigger
 
 
-DEFAULT_DIR = "users"
+DEFAULT_DIR = "metrics"
 
 
 def collect():

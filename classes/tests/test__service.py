@@ -1,5 +1,5 @@
 import pytest
-from users._service import ServiceCountBaseTrigger
+from metrics._service import ServiceCountBaseTrigger
 from statmonster import Counter
 
 
