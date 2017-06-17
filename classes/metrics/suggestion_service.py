@@ -6,11 +6,11 @@ class SuggestionsLog(Log):
     name = "suggest"
 
 
-class SuggestionsStatsTimings(ServiceTimingBaseTrigger):
+class SuggestionsTimings(ServiceTimingBaseTrigger):
     owners = ["search@yelp.com"]
     metric_name = 'suggestions_timings'
 
 
-class SuggestionsStatsCount(ServiceCountBaseTrigger):
+class SuggestionsCount(ServiceCountBaseTrigger):
     owners = ["search@yelp.com"]
     metric_name = 'suggestions_count'
