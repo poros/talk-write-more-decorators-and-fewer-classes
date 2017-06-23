@@ -12,4 +12,4 @@ def time_home_endpoints(entry):
         "mode": entry.get("mode", "sync"),
         "user": "loggedin" if entry["username"] else "anonymous",
     }
-    return emit_endpoints_timings("home", ENDPOINTS, dims, entry)
+    yield from emit_endpoints_timings("home", ENDPOINTS, dims, entry)
