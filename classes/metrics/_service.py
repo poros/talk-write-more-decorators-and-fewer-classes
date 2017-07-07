@@ -2,6 +2,9 @@ from statmonster import Trigger, Timer, Counter
 
 
 class ServiceBaseTrigger(Trigger):
+
+    metrics_name = None
+
     def __init__(self):
         super().__init__()
         assert self.metric_name
