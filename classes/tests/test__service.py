@@ -4,7 +4,7 @@ from statmonster import Counter
 
 
 @pytest.fixture
-def trigger(self):
+def trigger():
     return type(
         "TestTrigger",
         (ServiceCountBaseTrigger,),
@@ -12,7 +12,7 @@ def trigger(self):
     )()
 
 
-def test_digest(self, trigger):
+def test_digest(trigger):
     entry = {
         "time": 123456,
         "status": 200,
