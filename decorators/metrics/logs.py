@@ -9,7 +9,7 @@ suggestions_service = Log("suggest")
 home = Log("homepage")
 
 
-ApacheLog = partial(Log, codec=decode_apache)
+ApacheLog = partial(Log, decoder=decode_apache)
 access = ApacheLog("access")
 admin_access = ApacheLog("admin_access")
 
@@ -19,4 +19,4 @@ def decode_text(line):
     return {'time': time, 'request': request}
 
 
-requests = Log("tmp_requests", codec=decode_text)
+requests = Log("tmp_requests", decoder=decode_text)

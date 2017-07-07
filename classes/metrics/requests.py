@@ -8,4 +8,4 @@ def decode_text(line):
 
 class RequestsLog(Log):
     name = "tmp_requests"
-    codec = decode_text
+    decoder = decode_text

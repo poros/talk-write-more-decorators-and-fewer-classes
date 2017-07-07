@@ -6,14 +6,14 @@ def decode_json(line):
 
 
 class Log:
-    codec = decode_json
+    decoder = decode_json
 
     def __init__(self):
         assert self.name, "log name must be specified"
 
     @classmethod
     def decode(cls, line):
-        return cls.codec(line)
+        return cls.decoder(line)
 
     def __str__(self):
         return self.name

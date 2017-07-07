@@ -7,13 +7,13 @@ def decode_json(line):
 
 
 class Log:
-    def __init__(self, name, codec=decode_json):
+    def __init__(self, name, decoder=decode_json):
         self.name = name
-        self.codec = codec
+        self.decoder = decoder
         self.fns = set()
 
     def decode(self, line):
-        return self.codec(line)
+        return self.decoder(line)
 
     def process(self, line):
         entry = self.decode(line)
