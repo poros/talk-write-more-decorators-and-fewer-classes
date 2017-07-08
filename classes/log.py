@@ -6,6 +6,7 @@ def decode_json(line):
 
 
 class Log:
+    name = None
     decoder = decode_json
 
     def __init__(self):

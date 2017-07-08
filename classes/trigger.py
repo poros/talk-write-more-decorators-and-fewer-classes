@@ -1,4 +1,6 @@
 class Trigger:
+    owners = None
+
     def __init__(self):
         assert self.owners
 
